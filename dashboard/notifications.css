@@ -1,0 +1,183 @@
+ :root {
+            --green-apple: #2CB955;
+            --green-dark: #124F29;
+            --bg: #0b1510;
+            --text: #eaf7ee;
+            --muted: #bfe9ca;
+            --card: #0f2016;
+            --shadow: 0 10px 30px rgba(0,0,0,.35);
+            --radius: 16px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--bg), #0f1a13);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            color: var(--green-apple);
+        }
+        
+        .welcome-text {
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+        
+        .notifications-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        
+        .notification-list {
+            list-style: none;
+        }
+        
+        .notification-item {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: background 0.3s ease;
+        }
+        
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+        
+        .notification-item:hover {
+            background: rgba(255,255,255,0.03);
+        }
+        
+        .notification-item.unread {
+            background: rgba(44, 185, 85, 0.08);
+            border-left: 4px solid var(--green-apple);
+        }
+        
+        .notification-message {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .notification-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(44, 185, 85, 0.1);
+            color: var(--green-apple);
+            border: 1px solid var(--green-apple);
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+        
+        .notification-link:hover {
+            background: var(--green-apple);
+            color: #07150d;
+        }
+        
+        .notification-time {
+            color: var(--muted);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        .empty-state h3 {
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+        
+        .empty-state p {
+            color: var(--muted);
+            opacity: 0.8;
+        }
+        
+        .mark-read-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 8px;
+            background: rgba(44, 185, 85, 0.1);
+            color: var(--green-apple);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .page-title {
+                font-size: 1.7rem;
+            }
+            
+            .notifications-card {
+                padding: 20px;
+            }
+            
+            .notification-item {
+                padding: 15px;
+            }
+        }

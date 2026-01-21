@@ -1,0 +1,59 @@
+CREATE TABLE User (
+    userId INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    passwordHash VARCHAR(255) NOT NULL,
+    phone VARCHAR(20),
+    telegramUsername VARCHAR(50),
+    role ENUM('Admin', 'Staff', 'Technician', 'External') NOT NULL,
+    category ENUM('Networking', 'Electrical', 'Electronics'),
+    isApproved TINYINT(1) DEFAULT 0
+);
+CREATE TABLE MaintenanceRequest (
+    requestId INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    category ENUM('Networking', 'Electrical', 'Electronics') NOT NULL,
+    status ENUM('Submitted', 'Assigned', 'In_Progress', 'Resolved') DEFAULT 'Submitted',
+    requesterId INT NOT NULL,
+    assignedTechnicianId INT,
+    campus VARCHAR(100),
+    building_number VARCHAR(20),
+    room_number VARCHAR(20),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    user_type ENUM('Internal', 'External'),
+    FOREIGN KEY (requesterId) REFERENCES User(userId),
+    FOREIGN KEY (assignedTechnicianId) REFERENCES User(userId)
+);
+CREATE TABLE RequestFile (
+    fileId INT AUTO_INCREMENT PRIMARY KEY,
+    fileUrl VARCHAR(255) NOT NULL,
+    fileType ENUM('Image', 'Audio', 'Video') NOT NULL,
+    requestId INT NOT NULL,
+    FOREIGN KEY (requestId) REFERENCES MaintenanceRequest(requestId)
+);
+CREATE TABLE paymentProof (
+    paymentId INT AUTO_INCREMENT PRIMARY KEY,
+    receiptUrl VARCHAR(255),
+    transactionCode VARCHAR(50),
+    paymentStatus ENUM('Pending', 'Verified', 'Rejected') DEFAULT 'Pending',
+    requestId INT NOT NULL,
+    FOREIGN KEY (requestId) REFERENCES MaintenanceRequest(requestId)
+);
+CREATE TABLE CompletedRequest (
+    completeId INT AUTO_INCREMENT PRIMARY KEY,
+    completionNote TEXT,
+    completedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    requestId INT NOT NULL,
+    completedBy INT NOT NULL,
+    FOREIGN KEY (requestId) REFERENCES MaintenanceRequest(requestId),
+    FOREIGN KEY (completedBy) REFERENCES User(userId)
+);
+CREATE TABLE systemLogs (
+    logId INT AUTO_INCREMENT PRIMARY KEY,
+    userId INT NOT NULL,
+    action TEXT NOT NULL,
+    ip_address VARCHAR(45),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (userId) REFERENCES User(userId)
+);

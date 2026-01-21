@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UoG MRTS — Maintenance Request Tracking System</title>
+  <link rel="stylesheet" href="dashboard/home.css">
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24"></svg>
+        </div>
+        <span style="font-size: 30px; color: #2CB955; ">UoG-MRTS</span>
+      </div>
+      <div class="nav-links" id="navLinks"  >
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#roles">Roles</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center">
+        <a class="nav-cta" href="login.php">Get Started</a>
+        <a class="nav-cta" href="register.php">Signup</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div style="position: relative; z-index: 1;">
+      <h1>University of Gondar Maintenance Request Tracking System</h1>
+      <p>Maintenance made simple for University facilities.</p>
+      
+      <div class="chips">
+        <span class="chip">Real‑time status</span>
+        <span class="chip">Load‑balanced assignment</span>
+        <span class="chip">Payment proof flow</span>
+        <span class="chip">Audit logs</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3 style="margin: 0 0 8px; font-size: 20px; color: #d5f0dc;  text-align: center;">
+        Ready To Get Started?
+      </h3>
+     
+      <div class="cta-row" style="gap: 12px; justify-content: center;">
+        
+        <a class="btn btn-primary" href="#get-started">Create Request</a>
+        <a class="btn" href="#features">Explore Features</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- TRUST STRIP -->
+  <div class="section reveal">
+    <div class="card" style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <div class="icon">🏛️</div>
+        <div>
+          <strong>Designed for University of Gondar</strong>
+          <div class="muted">Tuned for UoG workflows and teams</div>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">Responsive</span>
+        <span class="chip">Accessible</span>
+        <span class="chip">Secure</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <section id="features" class="section">
+    <h2>Powerful features, minimalist design</h2>
+    <p class="muted">Everything you need to submit, approve, assign, and complete maintenance requests smoothly.</p>
+
+    <div class="grid grid-3" style="margin-top: 22px">
+      <div class="card reveal"><div class="icon">🔧</div><h3>Smart Requests</h3><p class="muted">Structured forms, attachments, and category routing.</p></div>
+      <div class="card reveal"><div class="icon">⚖️</div><h3>Load‑Balanced Techs</h3><p class="muted">Auto‑assigns within specialization to the least‑busy technician.</p></div>
+      <div class="card reveal"><div class="icon">🧾</div><h3>Payment Proof</h3><p class="muted">Capture and validate payment screenshots before assignment.</p></div>
+      <div class="card reveal"><div class="icon">📣</div><h3>Status Updates</h3><p class="muted">Email‑like notifications and a clean tracking timeline.</p></div>
+      <div class="card reveal"><div class="icon">🗂️</div><h3>Request Files</h3><p class="muted">Image, audio, and video support for better context.</p></div>
+      <div class="card reveal"><div class="icon">🛡️</div><h3>Audit Trail</h3><p class="muted">System logs for transparency and accountability.</p></div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW -->
+  <section id="workflow" class="section">
+    <h2>From request to resolution</h2>
+    <p class="muted">A clear, step‑by‑step path to completion.</p>
+    <div class="timeline card reveal">
+      <div class="step"><h3>1. Submit Request</h3><p class="muted">User enters details, uploads evidence, and selects category.</p></div>
+      <div class="step"><h3>2. Payment Verification</h3><p class="muted">Finance confirms receipt before assignment.</p></div>
+      <div class="step"><h3>3. Auto‑Assignment</h3><p class="muted">System picks the least‑loaded technician with matching skills.</p></div>
+      <div class="step"><h3>4. In Progress</h3><p class="muted">Technician updates progress and adds notes/files.</p></div>
+      <div class="step"><h3>5. Completion & Feedback</h3><p class="muted">Close the loop with completion notes and ratings.</p></div>
+    </div>
+  </section>
+
+  <!-- ROLES SECTION -->
+  <section id="roles" class="section">
+    <h2>Simple for every role</h2>
+    <p class="muted">Choose how you use MRTS.</p>
+    <div class="pricing">
+      <!-- External User -->
+      <div class="price featured reveal">
+        <span class="badge">External User</span>
+        <h3>External User</h3>
+        <p class="muted">Create requests, upload proofs, track status.</p>
+        <ul>
+          <li>✅ Guided request form</li>
+          <li>✅ File uploads</li>
+          <li>✅ Real-time updates</li>
+          <li>💳 Pay after finance sets price</li>
+        </ul>
+        <div style="height: 12px;" ></div>
+        <a class="btn btn-primary" href="login.php">Submit Request</a>
+      </div>
+
+      <!-- Technician -->
+      <div class="price featured reveal">
+        <span class="badge">Technician</span>
+        <h3>Service Provider</h3>
+        <p class="muted">See assignments, update progress, close tasks.</p>
+        <ul>
+          <li>✅ Load-balanced queue</li>
+          <li>✅ Notes & attachments</li>
+          <li>✅ Performance stats</li>
+          <li>🔧 Update job status</li>
+        </ul>
+        <div style="height: 12px"></div>
+        <a class="btn btn-primary" href="login.php">View Queue</a>
+      </div>
+
+      <!-- Staff -->
+      <div class="price featured reveal">
+        <span class="badge">Staff</span>
+        <h3>Internal User</h3>
+        <p class="muted">Request services without payment.</p>
+        <ul>
+          <li>✅ Guided request form</li>
+          <li>✅ File uploads</li>
+          <li>✅ No payment required</li>
+          <li>👷 Technician assigned automatically</li>
+        </ul>
+        <div style="height: 12px"></div>
+        <a class="btn btn-primary" href="login.php">Submit Request</a>
+      </div>
+
+      <!-- Admin -->
+      <div class="price featured reveal">
+        <span class="badge">Admin</span>
+        <h3>Manager</h3>
+        <p class="muted">Oversee and manage the whole system.</p>
+        <ul>
+          <li>✅ Approve registrations</li>
+          <li>✅ Manual overrides</li>
+          <li>👷 Assign technicians for staff requests</li>
+          <li>📊 Access system logs</li>
+        </ul>
+        <div style="height: 12px"></div>
+        <a class="btn btn-primary" href="login.php">Approve Accounts</a>
+      </div>
+
+      <!-- Chief Technician -->
+      <div class="price featured reveal">
+        <span class="badge">Chief Technician</span>
+        <h3>Chief Technician</h3>
+        <p class="muted">Manage technician assignments and performance.</p>
+        <ul>
+          <li>👷 Manual assignment for external requests</li>
+          <li>✅ Supervise technician queue</li>
+          <li>📊 Performance monitoring</li>
+        </ul>
+        <div style="height: 12px"></div>
+        <a class="btn btn-primary" href="login.php">Assign Technician</a>
+      </div>
+
+      <!-- Finance -->
+      <div class="price featured reveal">
+        <span class="badge">Finance</span>
+        <h3>Finance</h3>
+        <p class="muted">Handle pricing and payment verification.</p>
+        <ul>
+          <li>💵 Set request prices</li>
+          <li>✅ Verify payments</li>
+          <li>📊 Finance reports & logs</li>
+          <li>⚡ Skip for staff requests</li>
+        </ul>
+        <div style="height: 12px"></div>
+        <a class="btn btn-primary" href="login.php">Verify Payment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section faq">
+    <h2>Frequently asked questions</h2>
+   
+    <div class="accordion reveal" id="faqAcc">
+      <div class="acc-item">
+        <button class="acc-q">How do auto‑assignments work?</button>
+        <div class="acc-a">The system looks at technician specialization and current workload, then assigns the request to the least‑busy qualified technician.</div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Can I track my request in real time?</button>
+        <div class="acc-a">Yes. The tracking view shows statuses: Pending, Assigned, In Progress, and Completed with timestamps.</div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">How is payment verified?</button>
+        <div class="acc-a">Users upload a proof screenshot. Finance reviews and approves it before assignment proceeds.</div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q">Is this mobile friendly?</button>
+        <div class="acc-a">Absolutely—MRTS is responsive and works across phones, tablets, and desktops.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="get-started" class="section">
+    <div class="card reveal" style="display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;">
+      <div>
+        <h2>Ready to streamline maintenance?</h2>
+        <p class="muted">Spin up your first request and see the workflow in action.</p>
+      </div>
+      <a class="btn btn-primary" href="#">Create Maintenance Request</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="brand" style="margin-bottom: 10px">
+          <div class="brand-badge"><svg viewBox="0 0 24 24"><path d="M12 2l3.2 6.5 7.1 1-5.1 5 1.2 7.1L12 18.8 5.6 21.6 6.8 14.5 1.7 9.5l7.1-1z"/></svg></div>
+          <span style="font-size: 30px; color: #2CB955; ">UoG-MRTS</span>
+        </div>
+        
+      </div>
+      <div>
+        <strong>Product</strong><br>
+        <div style="margin-top: 20px;"></div>
+        <div style="margin-top: 10px;" class="muted"><a href="#features">Features</a></div>
+        <div style="margin-top: 10px;" class="muted"><a href="#workflow">Workflow</a></div>
+        <div style="margin-top: 10px;" class="muted"><a href="#roles">Roles</a></div>
+      </div>
+      <div>
+        <strong>Support</strong><br>
+        <div style="margin-top: 20px;"></div>
+
+        <div style="margin-top: 10px;" class="muted"><a href="#faq">FAQ</a></div>
+        <div style="margin-top: 10px;" class="muted"><a href="#get-started">Get started</a></div>
+      </div>
+      <div class="credits">© <span id="year"></span> UoG MRTS. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <button class="top-btn" id="topBtn" aria-label="Back to top">↑</button>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const shown = navLinks.style.display === 'flex';
+      navLinks.style.display = shown ? 'none' : 'flex';
+    });
+
+    // Intersection Observer for reveal animations
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.18 });
+    
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Accordion functionality
+    document.querySelectorAll('.acc-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const a = q.nextElementSibling;
+        const isOpen = a.style.display === 'block';
+        
+        // Close all other accordion items
+        document.querySelectorAll('.acc-a').forEach(item => {
+          item.style.display = 'none';
+        });
+        
+        // Toggle current item
+        a.style.display = isOpen ? 'none' : 'block';
+      });
+    });
+
+    // Back to top button
+    const topBtn = document.getElementById('topBtn');
+    window.addEventListener('scroll', () => {
+      topBtn.classList.toggle('show', window.scrollY > 600);
+    });
+    
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

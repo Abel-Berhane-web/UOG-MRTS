@@ -1,0 +1,253 @@
+ :root {
+            --green-apple: #2CB955;
+            --green-dark: #124F29;
+            --bg: #0b1510;
+            --text: #eaf7ee;
+            --muted: #bfe9ca;
+            --card: #0f2016;
+            --shadow: 0 10px 30px rgba(0,0,0,.35);
+            --radius: 16px;
+            --assigned: #FF9800;
+            --in-progress: #2196F3;
+            --completed: #4CAF50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--bg), #0f1a13);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid rgba(255,255,255,.06);
+            box-shadow: var(--shadow);
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            color: var(--green-apple);
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: var(--muted);
+            font-size: 1.1rem;
+        }
+        
+        .technician-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            background: var(--card);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .technician-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--green-apple);
+        }
+        
+        .technician-info {
+            flex: 1;
+        }
+        
+        .technician-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+        
+        .technician-specialization {
+            color: var(--green-apple);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: var(--card);
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255,255,255,.06);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .stat-total {
+            color: var(--green-apple);
+        }
+        
+        .stat-assigned {
+            color: var(--assigned);
+        }
+        
+        .stat-progress {
+            color: var(--in-progress);
+        }
+        
+        .stat-completed {
+            color: var(--completed);
+        }
+        
+        .stat-label {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        
+        .requests-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: var(--card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .requests-table th,
+        .requests-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+        
+        .requests-table th {
+            background-color: rgba(18,79,41,.7);
+            color: var(--text);
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        
+        .requests-table tr:hover {
+            background-color: rgba(255,255,255,.03);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-assigned {
+            background: rgba(255, 152, 0, 0.2);
+            color: var(--assigned);
+        }
+        
+        .status-in-progress {
+            background: rgba(33, 150, 243, 0.2);
+            color: var(--in-progress);
+        }
+        
+        .status-completed {
+            background: rgba(76, 175, 80, 0.2);
+            color: var(--completed);
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 25px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--green-apple), var(--green-dark));
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 185, 85, 0.3);
+        }
+        
+        .no-requests {
+            text-align: center;
+            padding: 40px;
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid rgba(255,255,255,.06);
+            box-shadow: var(--shadow);
+            color: var(--muted);
+        }
+        
+        .location-info {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 1024px) {
+            .requests-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .stats-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .technician-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .requests-table th,
+            .requests-table td {
+                padding: 12px 8px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .stats-cards {
+                grid-template-columns: 1fr;
+            }
+        }
