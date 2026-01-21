@@ -2,7 +2,7 @@
 session_start();
 
 // Your Groq API key
-$API_KEY = "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";
+$API_KEY = "ur GROQ_API_KEY_HERE";
 
 // Get message from POST
 $input = $_POST;
