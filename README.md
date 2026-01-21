@@ -204,6 +204,9 @@ All Users	        4 pages	        Profile, notifications, dashboard
 
 ## 📂 Project Structure (Simplified)
 
+### 1️⃣ Clone Repository
+```bash
+git clone [https://github.com/YOUR_USERNAME](https://abel-berhane-web.github.io/uog-mrts.git
 2️⃣ Move Project to WAMP Directory
 C:\wamp64\www\uog-mrts
 
