@@ -69,6 +69,7 @@ inApp and Email nitifications
 - AI-assisted recommendations enhance fairness and efficiency
 
 ---
+### 📊 Dashboards
 Authentication Pages:
 login.php - User login page
 
